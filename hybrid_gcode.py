@@ -140,22 +140,22 @@ newLines += lines[:layer_lines[startInject]]
 # newLines += makeCollumn(0, -8.2, 3.4, 28.6, e_start, eject_rate, injectLayers, speed)
 # newLines += makeCollumn(-8.2, 0, 3.4, 28.6, e_start + (0.25*e_range), eject_rate, injectLayers, speed)
 # newLines += makeCollumn(0, 8.2, 3.3, 28.6, e_start + (0.5*e_range), eject_rate, injectLayers, speed)
-# newLines += makeCollumn(8.2, 0, 3.3, 28.6, e_start + (0.75*e_range), eject_rate, injectLayers, speed)
+# # newLines += makeCollumn(8.2, 0, 3.3, 28.6, e_start + (0.75*e_range), eject_rate, injectLayers, speed)
 
-speed=80
-numSpirals = 4
-eject_rate = round((e_range/injectLayers)/numSpirals ,2)*0.25
-newLines += makeSpiral(0, -7.2, 3.5, 39.6, 1.4, e_start, eject_rate, injectLayers, speed)
-newLines += makeSpiral(-7.2, 0, 3.5, 39.6, 1.4, e_start + (0.25*e_range*.25), eject_rate, injectLayers, speed)
-newLines += makeSpiral(0, 7.2, 3.5, 39.6, 1.4, e_start + (0.5*e_range*.25), eject_rate, injectLayers, speed)
-newLines += makeSpiral(7.2, 0, 3.5, 39.6, 1.4, e_start + (0.75*e_range*.25), eject_rate, injectLayers, speed)
+# speed=80
+# numSpirals = 4
+# eject_rate = round((e_range/injectLayers)*0.25/numSpirals ,2)
+# newLines += makeSpiral(0, -7.2, 3.5, 39.6, 1.4, e_start, eject_rate, injectLayers, speed)
+# newLines += makeSpiral(-7.2, 0, 3.5, 39.6, 1.4, e_start + (0.25*e_range*.25), eject_rate, injectLayers, speed)
+# newLines += makeSpiral(0, 7.2, 3.5, 39.6, 1.4, e_start + (0.5*e_range*.25), eject_rate, injectLayers, speed)
+# newLines += makeSpiral(7.2, 0, 3.5, 39.6, 1.4, e_start + (0.75*e_range*.25), eject_rate, injectLayers, speed)
 
-# speed=40
-# numCollumns = 1
-# eject_rate = round((e_range/injectLayers)/numCollumns,2)*0.25
-# print("eject_rate: ", eject_rate)
+speed=40
+numCollumns = 1
+eject_rate = round((e_range/injectLayers)*0.25/numCollumns,2)
+print("eject_rate: ", eject_rate)
 
-newLines += makeSpiral(0, -7.2, 3.5, 39.6, 5, e_start, eject_rate, injectLayers, speed)
+newLines += makeSpiral(0, 0, 3.5, 39.6, 5, e_start, eject_rate, injectLayers, speed)
 
 newLines.append(f"G92 E{e_stop}\n")
 newLines += lines[layer_lines[endInject]:]
